@@ -27,7 +27,32 @@ const criaInput = () => {
   inputDaGalera.addEventListener('keyup', criaParagr);
 };
 
+const criaImg = () => {
+  const readFile = new FileReader();
+  const pegaDiv = document.getElementById('meme-image-container');
+  const imgPrev = document.getElementById('meme-insert');
+  const imgDaGalera = document.createElement('img');
+  imgDaGalera.id = 'meme-image';
+  imgDaGalera.style.width = '300px';
+  imgDaGalera.style.height = '300px';
+  imgDaGalera.style.position = 'absolute';
+  pegaDiv.appendChild(imgDaGalera);
+  readFile.onloadend = () => {
+    imgDaGalera.setAttribute('src', readFile.result);
+  };
+  readFile.readAsDataURL(imgPrev.files[0]);
+};
+
+const ImgUploadInput = () => {
+  const criaInputImg = document.createElement('input');
+  criaInputImg.type = 'file';
+  criaInputImg.id = 'meme-insert';
+  pegaBody.appendChild(criaInputImg);
+  criaInputImg.addEventListener('change', criaImg);
+};
+
 window.onload = () => {
   criaInput();
   criaDiv();
+  ImgUploadInput();
 };
