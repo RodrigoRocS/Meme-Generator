@@ -51,9 +51,24 @@ const ImgUploadInput = () => {
   criaInputImg.addEventListener('change', criaImg);
 };
 
+const CriaBtn = (color, idDoBtn, bordinha) => {
+  const btnDaGalera = document.createElement('button');
+  btnDaGalera.style.backgroundColor = color;
+  btnDaGalera.id = idDoBtn;
+  btnDaGalera.innerText = 'Borda do meme';
+  btnDaGalera.addEventListener('click', () => {
+    const pegaImg = document.getElementById('meme-image-container');
+    pegaImg.style.border = bordinha;
+  });
+  pegaBody.appendChild(btnDaGalera);
+};
+
 window.onload = () => {
   criaInput();
   criaDiv();
   ImgUploadInput();
   criaParagr();
+  CriaBtn('rgb(255,0,0)', 'fire', '3px dashed red');
+  CriaBtn('rgb(0,0,255)', 'water', '5px double rgb(0,0,255)');
+  CriaBtn('rgb(0,128,0)', 'earth', '6px groove rgb(0,128,0)');
 };
