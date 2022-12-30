@@ -5,11 +5,12 @@
   font-size: 30px;
   text-shadow: 5px 5px 5px black;
   color: white;
+  z-index: 1;
 }
 
 #meme-image {
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   position: absolute;
 }
 
@@ -20,3 +21,40 @@
   border: 1px solid black;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+#div-imagem-pre{
+  border: 2px solid black;
+  width: auto;
+  height: auto;
+  display: flex
+}
+
+#meme-1 {
+  content: url(/imgs/meme1.png);
+  width: 88px;
+  height: 88px;
+  background-size: cover;
+}
+#meme-2 {
+  background-image: url(/imgs/meme2.png);
+  width: 88px;
+  height: 88px;
+  background-size: cover;
+}
+#meme-3 {
+  background-image: url(/imgs/meme3.png);
+  width: 88px;
+  height: 88px;
+  background-size: cover;
+}
+#meme-4 {
+  background-image: url(/imgs/meme4.png);
+  width: 88px;
+  height: 88px;
+  background-size: cover;
+}
